@@ -1,7 +1,13 @@
+resource "tls_private_key" "ec2_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
 resource "aws_key_pair" "keypair" {
   key_name   = var.key_name
-  public_key = file(var.public_key_path)
+  public_key = tls_private_key.ec2_key.public_key_openssh
 }
+
 
 module "vpc" {
   source = "./modules/vpc"

@@ -1,0 +1,39 @@
+# # Terraform
+# .terraform/
+# *.tfstate
+# *.tfstate.backup
+
+# # SSH keys
+# terraform-key
+# terraform-key.pub
+# *.pem
+# *.key
+
+# ===============================
+# Terraform
+# ===============================
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# ===============================
+# Terraform provider lock file
+# (KEEP this tracked, so do NOT ignore)
+# ===============================
+# .terraform.lock.hcl
+
+# ===============================
+# SSH / Key files (CRITICAL)
+# ===============================
+terraform-key
+terraform-key.pub
+*.pem
+*.key
+
+# ===============================
+# OS / Editor junk
+# ===============================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

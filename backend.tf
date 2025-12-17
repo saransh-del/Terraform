@@ -1,9 +1,11 @@
 terraform {
   backend "s3" {
-    bucket  = "terraform-state-saransh"
-    key     = "dev/terraform.tfstate"
-    region  = "us-east-1"
-    
-    use_lockfile = true
+    bucket         = "terraform-state-saransh4326"
+    key            = "dev/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+    role_arn       = "arn:aws:iam::353284254141:role/TerraformStateBackendRole"
   }
 }
+
